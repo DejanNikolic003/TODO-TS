@@ -1,7 +1,11 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const path = require("path");
+import path from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import { fileURLToPath } from "url";
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default {
   entry: "./src/index.ts",
   module: {
     rules: [
@@ -22,12 +26,13 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.html",
+      template: "public/index.html",
     }),
   ],
 
   devServer: {
-    static: path.join(__dirname, "dist"),
+    static: [path.join(__dirname, "dist"), path.join(__dirname, "test")],
+
     compress: true,
     port: 4000,
   },

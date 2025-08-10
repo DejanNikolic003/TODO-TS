@@ -2,6 +2,7 @@
   "name": "todo",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "develop": "webpack-dev-server --mode development",
     "build": "webpack --mode production"
