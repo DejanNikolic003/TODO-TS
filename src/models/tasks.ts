@@ -1,20 +1,9 @@
 import type { Item } from "../interfaces/Item";
 
-export const getAllTasks = async (): Promise<Item[]> => {
-    try {
-        const response = await fetch("data/tasks.json");
-        const result = await response.json();
-
-        return result;
-    } catch (error) {
-        console.error(error);
-    }
-
-    return [];
-};
-
 export const showTasks = (tasks: Item[]): void => {
     const taskList = document.getElementById("taskList") as HTMLDivElement;
+
+    taskList.innerHTML = '';
 
     tasks.forEach(task => {
         const taskDiv: HTMLDivElement = document.createElement("div");
@@ -27,8 +16,10 @@ export const showTasks = (tasks: Item[]): void => {
         taskDescription.textContent = task.description;
         taskPriority.textContent = task.priority;
         taskDueDate.textContent = task.due_date;        
-        
+
         taskDiv.append(taskHeading, taskDescription, taskPriority, taskDueDate);
         taskList.append(taskDiv);
     });
 }
+
+
