@@ -22,7 +22,6 @@
     <h1 class="text-5xl font-bold uppercase tracking-widest text-center">
       Todo with TS
     </h1>
-    <div id="taskList"></div>
     <button
       onclick="document.getElementById('createTaskModal').classList.remove('hidden')"
       class="flex items-center gap-1 p-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 cursor-pointer"
@@ -105,5 +104,9 @@
         </form>
       </div>
     </div>
+    <div
+      id="taskList"
+      class="mt-2 flex flex-col items-center justify-between text-center"
+    ></div>
   </body>
 </html>
