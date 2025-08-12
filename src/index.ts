@@ -44,8 +44,9 @@ createTaskForm.addEventListener("submit", (event: SubmitEvent) => {
         due_date: taskDueDate.value
     }
 
-    createTaskModal.classList.add("hidden");
     tasks.push(task);
     showTasks(tasks);
+    
+    createTaskModal.classList.add("hidden");
 }); 
 
